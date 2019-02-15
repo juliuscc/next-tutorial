@@ -6,6 +6,8 @@ const Wrapper = styled.div`
 	border-radius: 5px;
 	padding: 20px 50px;
 	text-align: center;
+	width: 300px;
+	margin: 100px auto;
 `
 
 const Title = styled.h1`
