@@ -5,6 +5,7 @@ const Wrapper = styled.div`
 	border: 2px solid #aaa;
 	border-radius: 5px;
 	padding: 20px 50px;
+	text-align: center;
 `
 
 const Title = styled.h1`
@@ -28,13 +29,33 @@ const BigButton = styled.button`
 	}
 `
 
+const Count = styled.div`
+	margin: 20px;
+	font-size: 30px;
+`
+
 class index extends Component {
+	state = { count: 0 }
+
+	increment = () => {
+		this.setState(state => ({
+			count: state.count + 1
+		}))
+	}
+
+	decrement = () => {
+		this.setState(state => ({
+			count: state.count - 1
+		}))
+	}
+
 	render() {
 		return (
 			<Wrapper>
 				<Title>Counter example!</Title>
-				<BigButton>+</BigButton>
-				<BigButton>-</BigButton>
+				<BigButton onClick={this.decrement}>-</BigButton>
+				<BigButton onClick={this.increment}>+</BigButton>
+				<Count>Counter value: {this.state.count}</Count>
 			</Wrapper>
 		)
 	}
