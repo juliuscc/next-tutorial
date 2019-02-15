@@ -34,19 +34,17 @@ const Count = styled.div`
 	font-size: 30px;
 `
 
+const CounterVisualizer = props => <Count>Counter value: {props.count}</Count>
+
 class index extends Component {
 	state = { count: 0 }
 
 	increment = () => {
-		this.setState(state => ({
-			count: state.count + 1
-		}))
+		this.setState(state => ({ count: state.count + 1 }))
 	}
 
 	decrement = () => {
-		this.setState(state => ({
-			count: state.count - 1
-		}))
+		this.setState(state => ({ count: state.count - 1 }))
 	}
 
 	render() {
@@ -55,7 +53,7 @@ class index extends Component {
 				<Title>Counter example!</Title>
 				<BigButton onClick={this.decrement}>-</BigButton>
 				<BigButton onClick={this.increment}>+</BigButton>
-				<Count>Counter value: {this.state.count}</Count>
+				<CounterVisualizer count={this.state.count} />
 			</Wrapper>
 		)
 	}
