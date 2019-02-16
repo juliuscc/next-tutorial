@@ -56,6 +56,9 @@ class index extends Component {
 				<BigButton onClick={this.decrement}>-</BigButton>
 				<BigButton onClick={this.increment}>+</BigButton>
 				<CounterVisualizer count={this.state.count} />
+				<CounterVisualizer count={this.state.count} />
+				<CounterVisualizer count={this.state.count} />
+				<CounterVisualizer count={this.state.count} />
 			</Wrapper>
 		)
 	}
